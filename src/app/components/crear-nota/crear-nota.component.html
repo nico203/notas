@@ -1,0 +1,31 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Nota
+      </mat-panel-title>
+      <mat-panel-description>
+        Crear o editar una nota
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Nombre de la nota" formControlName="nombre">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Categoría" formControlName="categoria">
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea matInput placeholder="Texto de la nota" formControlName="texto"></textarea>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary">Guardar</button>
+    </form>
+
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,8 @@
+<mat-list dense>
+  <h3 mat-subheader>Notas</h3>
+  <mat-list-item *ngFor="let nota of notas" (click)="editarNota(nota)">
+    <h3 matLine>{{ nota.nombre }}</h3>
+    <p matLine>{{ nota.texto }}</p>
+    <p matLine>{{ nota.categoria }} | {{ nota.id | date: 'dd/MM/yyyy hh:mm'}}</p>
+  </mat-list-item>
+</mat-list>
